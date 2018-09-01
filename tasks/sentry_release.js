@@ -205,6 +205,7 @@ module.exports = function(gruntArg) {
       sentryUploader;
 
     var params = {
+      domain: this.data.domain,
       organisation: this.data.organisation,
       authorisationToken: this.data.authorisationToken,
       project: this.data.project,
