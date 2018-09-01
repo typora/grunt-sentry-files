@@ -22,12 +22,12 @@ function SentryUrl (params) {
   params.organisation && this.setOrganisationName(params.organisation);
   params.project && this.setProjectName(params.project);
   params.authorisationToken && this.setAuthorisationToken(params.authorisationToken);
+
+  this._domain = params.domain || 'sentry.io';
   return this;
 }
 
 SentryUrl.prototype = {
-
-  DOMAIN: 'sentry.io',
 
   API_VERSION: 0,
 
@@ -56,7 +56,7 @@ SentryUrl.prototype = {
   },
 
   getAPIBaseUrl: function () {
-    return 'https://' + this.DOMAIN + '/api/' + this.API_VERSION;
+    return 'https://' + this._domain + '/api/' + this.API_VERSION;
   },
 
   getProjectUrl: function () {
